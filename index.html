@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación por elección funcional</title>
+
+<style>
+:root{
+  --primary:#0c4a6e;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --text:#1f2933;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+h1{text-align:center;color:var(--primary)}
+h2{margin-top:0}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+  margin-bottom:30px;
+}
+.question{margin-bottom:28px}
+.question strong{display:block;margin-bottom:12px}
+label{
+  display:block;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin-bottom:10px;
+  cursor:pointer;
+}
+input{margin-right:10px}
+.section{display:none}
+button{
+  width:100%;
+  padding:16px;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  font-size:1.05rem;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Validación por elección funcional</h1>
+
+<form
+  action="https://script.google.com/macros/s/AKfycbz_qRLv87Ix7pn4KZN9NVLR1bIRwpT81lS-ee_ky2KPy8FAtfl_t9KqYJwCyULotumzpA/exec"
+  method="POST"
+  onsubmit="setTimeout(()=>alert('¡Gracias! Respuestas enviadas correctamente.'),100)"
+>
+
+<!-- PREGUNTA RAÍZ -->
+<div class="card">
+<h2>Si Wuupi solo pudiera ayudarte en UNA cosa, ¿cuál elegirías?</h2>
+<p>(elige la que más se parece a tu problema real)</p>
+
+<label><input type="radio" name="root_choice" value="movimiento" required> Juegos de movimiento (partes del cuerpo)</label>
+<label><input type="radio" name="root_choice" value="educativas"> Actividades educativas (conceptos)</label>
+<label><input type="radio" name="root_choice" value="progreso"> Herramientas para evaluar progreso</label>
+<label><input type="radio" name="root_choice" value="familias"> Herramientas para comunicar avances a familias</label>
+</div>
+
+<!-- 🎮 JUEGOS DE MOVIMIENTO -->
+<div id="movimiento" class="section">
+<div class="card">
+<h2>🎮 Juegos de movimiento</h2>
+
+<div class="question">
+<strong>¿Qué te gustaría trabajar principalmente con este tipo de juegos?</strong>
+<label><input type="radio" name="mov_objetivo" value="Rango de movimiento"> Rango de movimiento</label>
+<label><input type="radio" name="mov_objetivo" value="Coordinación"> Coordinación</label>
+<label><input type="radio" name="mov_objetivo" value="Control postural"> Control postural</label>
+<label><input type="radio" name="mov_objetivo" value="Atención visual"> Atención / seguimiento visual</label>
+<label><input type="radio" name="mov_objetivo" value="Otro"> Otra</label>
+</div>
+
+<div class="question">
+<strong>¿Qué tan importante es que el juego se adapte al usuario?</strong>
+<label><input type="radio" name="mov_adaptabilidad" value="Elegir parte del cuerpo"> Que pueda elegir la parte del cuerpo</label>
+<label><input type="radio" name="mov_adaptabilidad" value="Ajustar dificultad"> Que pueda ajustar dificultad</label>
+<label><input type="radio" name="mov_adaptabilidad" value="Movimientos mínimos"> Que funcione con movimientos mínimos</label>
+<label><input type="radio" name="mov_adaptabilidad" value="Sin instrucciones verbales"> Que no requiera instrucciones verbales</label>
+</div>
+
+<div class="question">
+<strong>¿Dónde usarías más estos juegos?</strong>
+<label><input type="radio" name="mov_contexto" value="Sesión terapéutica"> Sesión terapéutica</label>
+<label><input type="radio" name="mov_contexto" value="Aula"> Aula</label>
+<label><input type="radio" name="mov_contexto" value="Casa"> Casa</label>
+<label><input type="radio" name="mov_contexto" value="Uso autónomo"> Uso autónomo</label>
+</div>
+
+<div class="question">
+<strong>¿Cómo sabes que una sesión fue “buena”?</strong>
+<label><input type="radio" name="mov_exito" value="Participó"> El paciente participó</label>
+<label><input type="radio" name="mov_exito" value="Movimiento esperado"> Logró el movimiento esperado</label>
+<label><input type="radio" name="mov_exito" value="Más tiempo"> Se mantuvo más tiempo</label>
+<label><input type="radio" name="mov_exito" value="Observé mejoras"> Yo pude observar mejoras</label>
+</div>
+
+<div class="question">
+<strong>¿Qué te frustraría de un juego de movimiento?</strong>
+<label><input type="radio" name="mov_frustracion" value="Repetitivo"> Que sea muy repetitivo</label>
+<label><input type="radio" name="mov_frustracion" value="No adaptable"> Que no pueda adaptarlo</label>
+<label><input type="radio" name="mov_frustracion" value="Cansancio"> Que el paciente se canse rápido</label>
+<label><input type="radio" name="mov_frustracion" value="No justificar avances"> Que no me sirva para justificar avances</label>
+</div>
+
+</div>
+</div>
+
+<!-- 🧩 ACTIVIDADES EDUCATIVAS -->
+<div id="educativas" class="section">
+<div class="card">
+<h2>🧩 Actividades educativas (conceptos)</h2>
+
+<div class="question">
+<strong>¿Qué tipo de conceptos te resulta más difícil trabajar hoy con tus pacientes?</strong>
+<label><input type="radio" name="edu_concepto" value="Colores"> Colores</label>
+<label><input type="radio" name="edu_concepto" value="Formas"> Formas</label>
+<label><input type="radio" name="edu_concepto" value="Números"> Números</label>
+<label><input type="radio" name="edu_concepto" value="Secuencias"> Secuencias</label>
+<label><input type="radio" name="edu_concepto" value="Causa–efecto"> Causa–efecto</label>
+<label><input type="radio" name="edu_concepto" value="Otro"> Otro</label>
+</div>
+
+<div class="question">
+<strong>¿Por qué es difícil trabajar estos conceptos hoy?</strong>
+<label><input type="radio" name="edu_barrera" value="Falta de atención"> Falta de atención</label>
+<label><input type="radio" name="edu_barrera" value="Dificultad motriz"> Dificultad motriz para interactuar</label>
+<label><input type="radio" name="edu_barrera" value="Falta de materiales"> Falta de materiales adecuados</label>
+<label><input type="radio" name="edu_barrera" value="No generaliza"> No se generaliza a otros contextos</label>
+</div>
+
+<div class="question">
+<strong>¿Cómo debería interactuar el usuario con el concepto?</strong>
+<label><input type="radio" name="edu_interaccion" value="Movimiento corporal"> Movimiento corporal</label>
+<label><input type="radio" name="edu_interaccion" value="Mirada"> Mirada</label>
+<label><input type="radio" name="edu_interaccion" value="Gestos simples"> Gestos simples</label>
+<label><input type="radio" name="edu_interaccion" value="Combinación de varios"> Combinación de varios</label>
+</div>
+
+<div class="question">
+<strong>¿Qué tan importante es adaptar el nivel del concepto?</strong>
+<label><input type="radio" name="edu_adaptabilidad" value="Misma dificultad"> Mismo concepto, distinta dificultad</label>
+<label><input type="radio" name="edu_adaptabilidad" value="Cambiar ritmo"> Cambiar ritmo / estímulos</label>
+<label><input type="radio" name="edu_adaptabilidad" value="Repetición controlada"> Repetición controlada</label>
+<label><input type="radio" name="edu_adaptabilidad" value="Refuerzo multisensorial"> Refuerzo multisensorial</label>
+</div>
+
+<div class="question">
+<strong>¿Cómo sabes que el concepto fue comprendido?</strong>
+<label><input type="radio" name="edu_aprendizaje" value="Responde correctamente"> Responde correctamente</label>
+<label><input type="radio" name="edu_aprendizaje" value="Anticipa respuesta"> Anticipa la respuesta</label>
+<label><input type="radio" name="edu_aprendizaje" value="Aplica en otro contexto"> Lo aplica en otro contexto</label>
+<label><input type="radio" name="edu_aprendizaje" value="Se equivoca menos"> Se equivoca menos</label>
+</div>
+
+</div>
+</div>
+
+<!-- 📊 PROGRESO -->
+<div id="progreso" class="section">
+<div class="card">
+<h2>📊 Herramientas para evaluar progreso</h2>
+
+<div class="question">
+<strong>¿Qué tipo de progreso te cuesta más identificar hoy?</strong>
+<label><input type="radio" name="prog_tipo" value="Motor"> Motor</label>
+<label><input type="radio" name="prog_tipo" value="Cognitivo"> Cognitivo</label>
+<label><input type="radio" name="prog_tipo" value="Atención"> Atención / permanencia</label>
+<label><input type="radio" name="prog_tipo" value="Autonomía"> Autonomía</label>
+<label><input type="radio" name="prog_tipo" value="Otro"> Otro</label>
+</div>
+
+<div class="question">
+<strong>¿Cómo sueles notar que un paciente avanza?</strong>
+<label><input type="radio" name="prog_unidad" value="Menos ayuda"> Hace el movimiento con menos ayuda</label>
+<label><input type="radio" name="prog_unidad" value="Más consistencia"> Lo repite con más consistencia</label>
+<label><input type="radio" name="prog_unidad" value="Más rápido"> Responde más rápido</label>
+<label><input type="radio" name="prog_unidad" value="Más tiempo"> Mantiene la actividad más tiempo</label>
+</div>
+
+<div class="question">
+<strong>¿Cada cuánto te gustaría ver señales de avance?</strong>
+<label><input type="radio" name="prog_horizonte" value="Misma sesión"> En la misma sesión</label>
+<label><input type="radio" name="prog_horizonte" value="Semana a semana"> Semana a semana</label>
+<label><input type="radio" name="prog_horizonte" value="Mensualmente"> Mensualmente</label>
+<label><input type="radio" name="prog_horizonte" value="Cierre de ciclo"> Al cerrar un ciclo terapéutico</label>
+</div>
+
+<div class="question">
+<strong>¿Para qué usas hoy esa información?</strong>
+<label><input type="radio" name="prog_uso" value="Ajustar terapia"> Ajustar la terapia</label>
+<label><input type="radio" name="prog_uso" value="Justificar decisiones"> Justificar decisiones</label>
+<label><input type="radio" name="prog_uso" value="Informar padres"> Informar a padres</label>
+<label><input type="radio" name="prog_uso" value="Reportar institución"> Reportar a la institución</label>
+</div>
+
+<div class="question">
+<strong>¿Qué es lo más frustrante de evaluar progreso hoy?</strong>
+<label><input type="radio" name="prog_frustracion" value="Subjetividad"> Subjetividad</label>
+<label><input type="radio" name="prog_frustracion" value="Falta de tiempo"> Falta de tiempo</label>
+<label><input type="radio" name="prog_frustracion" value="Falta de registros"> Falta de registros</label>
+<label><input type="radio" name="prog_frustracion" value="Dificultad para explicarlo"> Dificultad para explicarlo</label>
+</div>
+
+</div>
+</div>
+
+<!-- 👨‍👩‍👧 FAMILIAS -->
+<div id="familias" class="section">
+<div class="card">
+<h2>👨‍👩‍👧 Herramientas para comunicar avances a familias</h2>
+
+<div class="question">
+<strong>¿En qué momento es más difícil comunicar avances a las familias?</strong>
+<label><input type="radio" name="fam_momento" value="Inicio del proceso"> Inicio del proceso</label>
+<label><input type="radio" name="fam_momento" value="Avance lento"> Cuando el avance es lento</label>
+<label><input type="radio" name="fam_momento" value="Retrocesos"> Cuando hay retrocesos</label>
+<label><input type="radio" name="fam_momento" value="Renovación de tratamiento"> Renovación de tratamiento</label>
+</div>
+
+<div class="question">
+<strong>¿Qué entienden mejor las familias?</strong>
+<label><input type="radio" name="fam_evidencia" value="Videos"> Videos</label>
+<label><input type="radio" name="fam_evidencia" value="Imágenes"> Imágenes</label>
+<label><input type="radio" name="fam_evidencia" value="Frases simples"> Frases simples</label>
+<label><input type="radio" name="fam_evidencia" value="Comparativos"> Comparativos (antes / después)</label>
+</div>
+
+<div class="question">
+<strong>¿Qué tan profundo debe ser el mensaje?</strong>
+<label><input type="radio" name="fam_detalle" value="Muy simple"> Muy simple</label>
+<label><input type="radio" name="fam_detalle" value="Resumen + ejemplo"> Resumen + ejemplo</label>
+<label><input type="radio" name="fam_detalle" value="Detalle terapéutico"> Detalle terapéutico</label>
+</div>
+
+<div class="question">
+<strong>¿Qué te preocupa al comunicar avances?</strong>
+<label><input type="radio" name="fam_riesgos" value="Malinterpretaciones"> Malinterpretaciones</label>
+<label><input type="radio" name="fam_riesgos" value="Expectativas irreales"> Expectativas irreales</label>
+<label><input type="radio" name="fam_riesgos" value="Falta de constancia"> Falta de constancia</label>
+<label><input type="radio" name="fam_riesgos" value="Conflictos con la familia"> Conflictos con la familia</label>
+</div>
+
+<div class="question">
+<strong>Después de recibir la información, te gustaría que la familia o superiores:</strong>
+<label><input type="radio" name="fam_resultado" value="Entienda el proceso"> Entienda el proceso</label>
+<label><input type="radio" name="fam_resultado" value="Confíe más"> Confíe más</label>
+<label><input type="radio" name="fam_resultado" value="Acompañe en casa"> Acompañe en casa</label>
+<label><input type="radio" name="fam_resultado" value="Continúe el tratamiento"> Continúe el tratamiento</label>
+</div>
+
+</div>
+</div>
+
+<button type="submit">Enviar respuestas</button>
+</form>
+</div>
+
+<script>
+document.querySelectorAll('input[name="root_choice"]').forEach(r=>{
+  r.addEventListener("change",()=>{
+    document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+    const sec = document.getElementById(r.value);
+    if(sec) sec.style.display="block";
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+});
+</script>
+
+</body>
+</html>
